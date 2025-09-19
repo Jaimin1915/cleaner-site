@@ -19,15 +19,15 @@ const Header = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       {/* Top Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4">
+      <div className="bg-[#4D757B] text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <span className="flex items-center"><Phone size={14} className="mr-1" /> +1 (555) 123-4567</span>
-            <span className="flex items-center"><Mail size={14} className="mr-1" /> info@cleasy.com</span>
+          <div className="flex items-center space-x-6">
+            <span className="flex items-center"><Phone size={14} className="mr-2" /> +1 (555) 123-4567</span>
+            <span className="flex items-center"><Mail size={14} className="mr-2" /> info@cleasy.com</span>
           </div>
-          <div className="flex items-center space-x-4 mt-1 sm:mt-0">
-            <span className="flex items-center"><Clock size={14} className="mr-1" /> Mon-Fri: 8AM-6PM</span>
-            <span className="flex items-center"><MapPin size={14} className="mr-1" /> New York, NY</span>
+          <div className="flex items-center space-x-6 mt-1 sm:mt-0">
+            <span className="flex items-center"><Clock size={14} className="mr-2" /> Mon-Fri: 8AM-6PM</span>
+            <span className="flex items-center"><MapPin size={14} className="mr-2" /> New York, NY</span>
           </div>
         </div>
       </div>
@@ -36,22 +36,40 @@ const Header = () => {
       <nav className="py-4 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <Sparkles className="text-blue-600 mr-2" size={32} />
-            <h1 className="text-2xl font-bold text-gray-800">Cleasy</h1>
+            <Sparkles className="text-[#4D757B] mr-3" size={36} />
+            <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Cleasy</h1>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+            <a href="#home" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#services" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              Services
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#about" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#pricing" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              Pricing
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#testimonials" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              Testimonials
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-[#4D757B] transition-all duration-300 font-medium relative group">
+              Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4D757B] transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-[#4D757B] text-white px-8 py-3 rounded-xl hover:bg-[#3d5e64] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-semibold">
               Get Quote
             </button>
           </div>
@@ -69,13 +87,13 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 bg-white border-t">
             <div className="flex flex-col space-y-4 px-4">
-              <a href="#home" className="text-gray-700 hover:text-blue-600">Home</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600">About</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600">Pricing</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600">Testimonials</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full">
+              <a href="#home" className="text-gray-700 hover:text-[#4D757B]">Home</a>
+              <a href="#services" className="text-gray-700 hover:text-[#4D757B]">Services</a>
+              <a href="#about" className="text-gray-700 hover:text-[#4D757B]">About</a>
+              <a href="#pricing" className="text-gray-700 hover:text-[#4D757B]">Pricing</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-[#4D757B]">Testimonials</a>
+              <a href="#contact" className="text-gray-700 hover:text-[#4D757B]">Contact</a>
+              <button className="bg-[#4D757B] text-white px-6 py-2 rounded-xl hover:bg-[#3d5e64] transition-colors w-full">
                 Get Quote
               </button>
             </div>
@@ -86,4 +104,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;

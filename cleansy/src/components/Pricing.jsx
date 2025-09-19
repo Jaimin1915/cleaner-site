@@ -56,41 +56,41 @@ const Pricing = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div key={index} className={`rounded-2xl p-8 relative ${
+            <div key={index} className={`rounded-2xl p-8 relative transition-all duration-300 ${
               plan.popular 
-                ? 'bg-blue-600 text-white shadow-xl transform scale-105' 
-                : 'bg-gray-50 text-gray-800'
+                ? 'bg-gradient-to-br from-[#4D757B] to-[#3d5e64] text-white shadow-2xl transform scale-105 hover:scale-110' 
+                : 'bg-white text-gray-800 shadow-xl hover:shadow-2xl border border-[#A2B5C3]/20'
             }`}>
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-800 px-4 py-1 rounded-full text-sm font-bold">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-800 px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                   Most Popular
                 </div>
               )}
               
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-2">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+              <div className="text-center mb-10">
+                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
+                <div className="mb-4">
+                  <span className="text-5xl font-bold">{plan.price}</span>
                   <span className="text-sm opacity-80"> {plan.period}</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center">
                     <CheckCircle 
-                      className={`mr-3 ${plan.popular ? 'text-white' : 'text-green-500'}`} 
+                      className={`mr-4 flex-shrink-0 ${plan.popular ? 'text-white' : 'text-[#4D757B]'}`} 
                       size={20} 
                     />
-                    <span>{feature}</span>
+                    <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+              <button className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 ${
                 plan.popular 
-                  ? 'bg-white text-blue-600 hover:bg-gray-100' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  ? 'bg-white text-[#4D757B] hover:bg-gray-100 shadow-lg' 
+                  : 'bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white hover:shadow-xl'
               }`}>
                 Choose Plan
               </button>
@@ -101,6 +101,5 @@ const Pricing = () => {
     </section>
   );
 };
-
 
 export default Pricing;

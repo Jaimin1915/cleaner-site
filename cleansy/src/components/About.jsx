@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Star, CheckCircle, Users, Award, Shield, Sparkles, Home, Building, Trash2, Droplets, Menu, X } from 'lucide-react';
 
-// About Component
 const About = () => {
   const stats = [
     { number: "1000+", label: "Happy Clients" },
@@ -16,7 +15,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-5xl font-bold text-gray-800 mb-8">
-              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D757B] to-[#A2B5C3]">Cleasy</span>?
+              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4D757B] to-[#A2B5C3]">TRUE SHINE</span>?
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               With over 15 years of experience in the cleaning industry, we've built our reputation on reliability, quality, and customer satisfaction. Our team of trained professionals uses eco-friendly products and advanced techniques to deliver exceptional results.

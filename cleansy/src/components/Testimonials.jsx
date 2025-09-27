@@ -6,19 +6,19 @@ const Testimonials = () => {
     {
       name: "Sarah Johnson",
       role: "Homeowner",
-      content: "Cleasy has been cleaning our home for over 2 years now. Their attention to detail is incredible, and they always leave our house spotless. Highly recommended!",
+      content: "True-Shine has been cleaning our home for over 2 years now. Their attention to detail is incredible, and they always leave our house spotless. Highly recommended!",
       rating: 5
     },
     {
       name: "Michael Chen",
       role: "Office Manager",
-      content: "We've been using Cleasy for our office cleaning needs for the past year. They're reliable, professional, and always do an excellent job. Our employees love the clean environment.",
+      content: "We've been using True-Shine for our office cleaning needs for the past year. They're reliable, professional, and always do an excellent job. Our employees love the clean environment.",
       rating: 5
     },
     {
       name: "Emily Rodriguez",
       role: "Restaurant Owner",
-      content: "As a restaurant owner, cleanliness is crucial. Cleasy provides exceptional commercial cleaning services that help us maintain the highest hygiene standards.",
+      content: "As a restaurant owner, cleanliness is crucial. True-Shine provides exceptional commercial cleaning services that help us maintain the highest hygiene standards.",
       rating: 5
     }
   ];

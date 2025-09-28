@@ -6,8 +6,6 @@ import SchoolCleaningDetail from './SchoolCleaningDetail';
 import ChildcareCleaningDetail from './ChildcareCleaningDetail';
 import FitnessCentreDetail from './FitnessCentreDetail';
 import BuildersCleanDetail from './BuildersCleanDetail';
-import BodyCorpCleaningDetail from './BodyCorpCleaningDetail';
-import PressureCleaningDetail from './PressureCleaningDetail';
 import CarpetCleaningDetail from './CarpetCleaningDetail';
 
 const ServiceModal = ({ service, onClose }) => {
@@ -23,10 +21,6 @@ const ServiceModal = ({ service, onClose }) => {
         return <FitnessCentreDetail />;
       case 5:
         return <BuildersCleanDetail />;
-      case 6:
-        return <BodyCorpCleaningDetail />;
-      case 7:
-        return <PressureCleaningDetail />;
       case 8:
         return <CarpetCleaningDetail />;
       default:

@@ -111,24 +111,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/body-corp-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Body Corp Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/pressure-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Pressure Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/services/carpet-cleaning"
                   onClick={handleServiceClick}
                   className="hover:text-white transition-colors duration-300"

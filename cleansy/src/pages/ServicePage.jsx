@@ -7,8 +7,6 @@ import SchoolCleaningDetail from "../services/SchoolCleaningDetail.jsx"
 import ChildcareCleaningDetail from "../services/ChildcareCleaningDetail.jsx"
 import FitnessCentreDetail from "../services/FitnessCentreDetail.jsx"
 import BuildersCleanDetail from "../services/BuildersCleanDetail.jsx"
-import BodyCorpCleaningDetail from "../services/BodyCorpCleaningDetail.jsx"
-import PressureCleaningDetail from "../services/PressureCleaningDetail.jsx"
 import { useEffect } from "react"
 import CarpetCleaningDetail from "../services/CarpetCleaningDetail.jsx"
 
@@ -114,10 +112,6 @@ const ServicePage = () => {
         return <FitnessCentreDetail />
       case 5:
         return <BuildersCleanDetail />
-      case 6:
-        return <BodyCorpCleaningDetail />
-      case 7:
-        return <PressureCleaningDetail />
       case 8:
         return <CarpetCleaningDetail />
       default:
@@ -154,12 +148,15 @@ const ServicePage = () => {
             Contact us today for a free quote and let us take care of your {service.title.toLowerCase()} needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <a href="/#quote" className="bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               Get Free Quote
-            </button>
-            <button className="border-2 border-[#4D757B] text-[#4D757B] px-8 py-4 rounded-xl font-semibold hover:bg-[#4D757B] hover:text-white transition-all duration-300">
-              Call Now: +1 (555) 123-4567
-            </button>
+            </a>  
+            <a
+                href="tel:+15551234567"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-3 font-semibold text-slate-900 shadow ring-1 ring-slate-200 hover:bg-green-200"
+              >
+                Call Now
+              </a>
           </div>
         </div>
       </div>

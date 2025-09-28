@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* soft vignette for hero images */
+.hero-vignette {
+  background: radial-gradient(120% 80% at 50% 0%, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.16) 45%, rgba(0,0,0,0.08) 65%, rgba(0,0,0,0.00) 100%);
+}
+
+
+/* Soft vignette to keep text readable on bright photos */
+.hero-vignette {
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.18) 45%,
+    rgba(0, 0, 0, 0.10) 65%,
+    rgba(0, 0, 0, 0.00) 100%
+  );
+}

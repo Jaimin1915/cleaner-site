@@ -47,22 +47,6 @@ const Services = () => {
       url: "/services/builders-clean",
     },
     {
-      id: 6,
-      icon: <Building className="text-[#4D757B]" size={48} />,
-      title: "Body Corp Cleaning",
-      shortDescription: "Comprehensive body corporate cleaning services for apartment complexes, maintaining common areas and building standards.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/body-corp-cleaning",
-    },
-    {
-      id: 7,
-      icon: <Droplets className="text-[#4D757B]" size={48} />,
-      title: "Pressure Cleaning",
-      shortDescription: "High-pressure cleaning services for exterior surfaces, removing dirt, grime, and stains from various surfaces.",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/pressure-cleaning",
-    },
-    {
       id: 8,
       icon: <Home className="text-[#4D757B]" size={48} />,
       title: "Carpet Cleaning",

@@ -1,22 +1,30 @@
 // src/components/Hero.jsx
 import React from "react";
 import { Star, Users } from "lucide-react";
-import heroBg from "../assets/images/hero-cleaning.jpg";
+
+// import all three formats from the same folder/basename
+import heroBgAvif from "../assets/images/hero-cleaning.avif";
+import heroBgWebp from "../assets/images/hero-cleaning.webp";
+import heroBgJpg  from "../assets/images/hero-cleaning.jpg";
 
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-clip">
-      {/* Hero image as an <img> so we can use fetchpriority/sizes */}
-      <img
-        src={heroBg}
-        alt=""
-        fetchpriority="high"        // tell the browser this is critical
-        loading="eager"             // load immediately
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover
-                   bg-no-repeat bg-cover bg-center md:bg-[position:60%_center] lg:bg-[position:55%_center]"
-        sizes="100vw"
-      />
+      {/* Use <picture> for AVIF → WebP → JPG */}
+      <picture>
+        <source srcSet={heroBgAvif} type="image/avif" />
+        <source srcSet={heroBgWebp} type="image/webp" />
+        <img
+          src={heroBgJpg}
+          alt=""
+          fetchPriority="high"       // React camelCase
+          loading="eager"
+          decoding="async"
+          sizes="100vw"
+          className="absolute inset-0 w-full h-full object-cover
+                     bg-no-repeat bg-cover bg-center md:bg-[position:60%_center] lg:bg-[position:55%_center]"
+        />
+      </picture>
 
       {/* Blue-tinted overlays for readability */}
       <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(15,23,42,.72)_0%,rgba(15,23,42,.38)_42%,rgba(15,23,42,.22)_68%,rgba(15,23,42,.10)_100%)]" />

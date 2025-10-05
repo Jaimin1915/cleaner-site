@@ -6,6 +6,7 @@ import Testimonials from "../components/Testimonials.jsx"
 import Contact from "../components/Contact.jsx"
 import SocialMediaWidget from "../components/SocialMediaWidget.jsx"
 import QuoteSection from "../components/QuoteSection";
+import StepsStrip from '../components/StepsStrip.jsx'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <Services />
       <About />
+      <StepsStrip />
       <Testimonials />
       {/* <SocialMediaWidget /> */}
       <Contact />

@@ -61,7 +61,18 @@ const ServicePage = () => {
     <div className="min-h-screen bg-[var(--bg-soft)]">
       {/* Hero Section */}
       <div className="relative h-96 overflow-hidden">
-        <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover" />
+        {/* <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover" /> */}
+
+        <img
+          src={service.image || "/placeholder.svg"}
+          alt={service.title}
+          className="w-full h-full object-cover"
+          loading="eager"              // hero: load immediately
+          fetchpriority="high"
+          decoding="async"
+          sizes="100vw"
+        />
+
         {/* overlay shifted to brand navy */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent"></div>
         <div className="absolute bottom-8 left-8 max-w-4xl">

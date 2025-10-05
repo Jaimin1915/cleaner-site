@@ -143,12 +143,14 @@ export default function QuoteSection() {
                   required
                 >
                   <option value="">Choose one</option>
-                  <option value="Commercial Cleaning">Office Cleaning</option>
-                  <option value="Residential Cleaning">School Cleaning</option>
-                  <option value="Deep Cleaning">Childcare Cleaning</option>
+                  <option value="Commercial Cleaning">Commercial Cleaning</option>
+                  <option value="Shopping Center Cleaning">Shopping Center Cleaning</option>
+                  <option value="Medical Cleaningg">Medical Cleaning</option>
+                  <option value="Office Cleaning">Office Cleaning</option>
+                  <option value="School Cleaning">School Cleaning</option>
+                  <option value="Childcare Cleaning">Childcare Cleaning</option>
+                  <option value="Fitness Cleaning">Fitness Cleaning</option>
                   <option value="Builders Clean">Builders Clean</option>
-                  <option value="Fitness Centres">Fitness Centres</option>
-                  <option value="Carpet Cleaning">Carpet Cleaning</option>
                 </select>
               </div>
             </div>

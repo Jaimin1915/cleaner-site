@@ -6,14 +6,16 @@ import heroBg from "../assets/images/hero-cleaning.jpg";
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-clip">
-      {/* Background image */}
-      <div
-        className="
-          absolute inset-0
-          bg-no-repeat bg-cover
-          bg-center md:bg-[position:60%_center] lg:bg-[position:55%_center]
-        "
-        style={{ backgroundImage: `url(${heroBg})` }}
+      {/* Hero image as an <img> so we can use fetchpriority/sizes */}
+      <img
+        src={heroBg}
+        alt=""
+        fetchpriority="high"        // tell the browser this is critical
+        loading="eager"             // load immediately
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover
+                   bg-no-repeat bg-cover bg-center md:bg-[position:60%_center] lg:bg-[position:55%_center]"
+        sizes="100vw"
       />
 
       {/* Blue-tinted overlays for readability */}
@@ -27,7 +29,6 @@ export default function Hero() {
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-4 pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left — headline + CTAs */}
           <div className="space-y-8 text-white">
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Professional{" "}
@@ -36,27 +37,18 @@ export default function Hero() {
               </span>{" "}
               Services You Can Trust
             </h1>
-
             <p className="max-w-xl text-lg text-white/90 leading-relaxed">
               Transform your space with premium cleaning for homes and businesses.
               Eco-friendly products, trained professionals, guaranteed results.
             </p>
-
             <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#book"
-                className="inline-flex items-center justify-center rounded-xl btn-accent px-8 py-3 font-semibold shadow-lg hover:-translate-y-[1px] transition"
-              >
+              <a href="#book" className="inline-flex items-center justify-center rounded-xl btn-accent px-8 py-3 font-semibold shadow-lg hover:-translate-y-[1px] transition">
                 Book Now
               </a>
-              <a
-                href="#quote"
-                className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 backdrop-blur px-8 py-3 font-semibold text-white hover:bg-white/15 transition"
-              >
+              <a href="#quote" className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 backdrop-blur px-8 py-3 font-semibold text-white hover:bg-white/15 transition">
                 Get Free Quote
               </a>
             </div>
-
             <div className="flex items-center gap-10 pt-2">
               <span className="inline-flex items-center gap-2">
                 {[...Array(5)].map((_, i) => (
@@ -70,8 +62,7 @@ export default function Hero() {
               </span>
             </div>
           </div>
-
-          {/* Right — (kept commented block as-is) */}
+          {/* right column intentionally empty */}
         </div>
       </div>
     </section>

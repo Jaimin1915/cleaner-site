@@ -106,9 +106,13 @@ const ServiceCard = ({ svc }) => (
         <img
           src={svc.image || '/placeholder.svg'}
           alt={svc.title}
+          loading="lazy"          // defer offscreen images
+          decoding="async"
+          fetchpriority="low"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
-
+        
         {/* Darken image slightly on hover */}
         <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
 

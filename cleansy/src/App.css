@@ -1,42 +1,24 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* === Brand Palette (Blue Theme) === */
+:root{
+  --primary-blue: #1E3A8A;   /* Header / Brand */
+  --secondary-blue: #2563EB; /* Highlights / icons */
+  --accent-blue: #3B82F6;    /* Buttons / CTAs */
+  --bg-soft: #F0F9FF;        /* Site background */
+  --text-primary: #0F172A;   /* Headings / body */
+  --text-secondary: #475569; /* Subtitles */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body{
+  background: var(--bg-soft);
+  color: var(--text-primary);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* Utilities (for places not using Tailwind colors directly) */
+.bg-brand { background-color: var(--primary-blue); }
+.bg-brand-gradient { background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.btn-accent { background: var(--accent-blue); color: #fff; }
+.btn-accent:hover { filter: brightness(0.95); }
+.border-soft { border-color: rgba(15, 23, 42, 0.05); }
+.shadow-soft { box-shadow: 0 10px 20px rgba(30, 58, 138, .12); }

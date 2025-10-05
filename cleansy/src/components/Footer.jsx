@@ -1,130 +1,115 @@
 import React from 'react'
-import { Phone, Mail, MapPin, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 import { Link } from "react-router-dom"
-import logo from "../assets/images/logo.jpeg"
+import logo from "../assets/images/Logo.png";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
-  const handleServiceClick = (e) => {
-    // Small delay to allow navigation to complete before scrolling
-    setTimeout(() => {
-      scrollToTop()
-    }, 100)
-  }
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
+  const handleServiceClick = () => setTimeout(scrollToTop, 100)
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <footer
+      style={{
+        background: "linear-gradient(135deg, #0a1a3f, #0d47a1)",
+        color: "#ffffff",
+        padding: "40px 20px",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 py-16">
+        {/* === TOP GRID === */}
         <div className="grid md:grid-cols-4 gap-10">
-          {/* Brand */}
+          {/* Brand Info */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="flex items-center bg-gradient-to-r from-[#4D757B] to-[#5A8A91] p-2 rounded-lg shadow-lg mr-3">
-                <img src={logo} alt="TRUE SHINE Logo" className="w-10 h-10 object-contain rounded" />
-
+              <div className="flex items-center bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] p-0 rounded-lg shadow-lg mr-3">
+                <img
+              src={logo}
+              alt="TRUE SHINE Logo"
+              className="h-15 w-15 rounded"
+            />
               </div>
               <h3 className="text-3xl font-bold">TRUE SHINE</h3>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Professional cleaning services you can trust. We make your spaces shine with eco-friendly products and
-              expert care.
+
+            <p className="text-white/80 mb-6 leading-relaxed">
+              Professional cleaning services you can trust. We make your spaces shine with
+              eco-friendly products and expert care.
             </p>
-            <div className="flex space-x-4">
+
+            {/* Social Media */}
+            {/* <div className="flex space-x-6 mt-6">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/yourpage"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 p-3 rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 hover:shadow-lg hover:scale-110 transition-all"
               >
-                <Instagram size={20} className="text-white" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                  alt="Instagram"
+                  className="h-8 w-8"
+                />
               </a>
+
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 hover:shadow-lg hover:scale-110 transition-all"
               >
-                <Linkedin size={20} className="text-white" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                  alt="LinkedIn"
+                  className="h-8 w-8"
+                />
               </a>
+
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/yourchannel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-red-600 to-red-700 p-3 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 hover:shadow-lg hover:scale-110 transition-all"
               >
-                <Youtube size={20} className="text-white" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_play_button_icon_%282013%E2%80%932017%29.svg"
+                  alt="YouTube"
+                  className="h-8 w-8"
+                />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-[#A2B5C3]">Services</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li>
-                <Link
-                  to="/services/office-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Office Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/school-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  School Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/childcare-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Childcare Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/fitness-centres"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Fitness Centres
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/builders-clean"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Builders Clean
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/carpet-cleaning"
-                  onClick={handleServiceClick}
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Carpet Cleaning
-                </Link>
-              </li>
+            <h4 className="text-xl font-semibold mb-6 text-[#93C5FD]">Services</h4>
+            <ul className="space-y-3 text-white/70">
+              {[
+                ["office-cleaning", "Office Cleaning"],
+                ["school-cleaning", "School Cleaning"],
+                ["childcare-cleaning", "Childcare Cleaning"],
+                ["fitness-centres", "Fitness Centres"],
+                ["builders-clean", "Builders Clean"],
+                ["shopping-center-cleaning", "Shopping Center Cleaning"],
+                ["commercial-cleaning", "Commercial Cleaning"],
+                ["medical-cleaning", "Medical Cleaning"],
+              ].map(([slug, label]) => (
+                <li key={slug}>
+                  <Link
+                    to={`/services/${slug}`}
+                    onClick={handleServiceClick}
+                    className="hover:text-white transition-colors duration-300"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Company Info */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-[#A2B5C3]">Company</h4>
-            <ul className="space-y-3 text-gray-400">
+            <h4 className="text-xl font-semibold mb-6 text-[#93C5FD]">Company</h4>
+            <ul className="space-y-3 text-white/70">
               <li>
                 <Link to="/#about" className="hover:text-white transition-colors duration-300">
                   About Us
@@ -150,40 +135,45 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-[#A2B5C3]">Contact Info</h4>
-            <div className="space-y-4 text-gray-400">
+            <h4 className="text-xl font-semibold mb-6 text-[#93C5FD]">Contact Info</h4>
+            <div className="space-y-4 text-white/80">
               <div className="flex items-center">
-                <Phone className="mr-3 text-[#A2B5C3]" size={18} />
-                <span>+1 (555) 123-4567</span>
+                <Phone className="mr-3 text-[#93C5FD]" size={18} />
+                <span>+61 432 300 733</span>
               </div>
               <div className="flex items-center">
-                <Mail className="mr-3 text-[#A2B5C3]" size={18} />
+                <Mail className="mr-3 text-[#93C5FD]" size={18} />
                 <span>info@trueshine.com</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="mr-3 text-[#A2B5C3]" size={18} />
-                <span>123 Clean Street, NY 10001</span>
+                <MapPin className="mr-3 text-[#93C5FD]" size={18} />
+                <span>Herses Rd, Eagleby QLD 4207, Australia</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700">
+        {/* === MAP SECTION === */}
+        <div className="mt-12 pt-8 border-t border-white/10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-[#A2B5C3]">Visit Our Location</h4>
-              <p className="text-gray-400 mb-4">
-                Come visit us at our main office or contact us to schedule a consultation at your location.
+              <h4 className="text-xl font-semibold mb-4 text-[#93C5FD]">Visit Our Location</h4>
+              <p className="text-white/80 mb-4">
+                Come visit us at our main office or contact us to schedule a consultation at your
+                location.
               </p>
-              <div className="flex items-center text-gray-400">
-                <MapPin className="mr-3 text-[#A2B5C3]" size={18} />
-                <span>123 Clean Street, New York, NY 10001</span>
+              <div className="flex items-center text-white/80">
+                <MapPin className="mr-3 text-[#93C5FD]" size={18} />
+                <span>Herses Rd, Eagleby QLD 4207, Australia</span>
               </div>
             </div>
+
+            {/* Updated Google Map */}
             <div className="relative">
-              <div className="bg-gray-700 rounded-xl overflow-hidden shadow-lg">
+              <div className="bg-[#1E3A8A] rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647887432123!5m2!1sen!2s"
+                  title="True Shine Cleaning — Eagleby QLD"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.718365371347!2d153.21098437508022!3d-27.69509817618958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b916a0d84482601%3A0x17eab2a2f8a37e1a!2sHerses%20Rd%2C%20Eagleby%20QLD%204207%2C%20Australia!5e0!3m2!1sen!2sca!4v1759563376831!5m2!1sen!2sca"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -197,9 +187,18 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 TRUE SHINE. All rights reserved. | Privacy Policy | Terms of Service</p>
+        {/* === BOTTOM COPYRIGHT === */}
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-white/60">
+          <p>
+            &copy; 2025 TRUE SHINE. All rights reserved. |{" "}
+            <Link to="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>{" "}
+            |{" "}
+            <Link to="/terms" className="hover:text-white">
+              Terms of Service
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

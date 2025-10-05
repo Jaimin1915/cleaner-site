@@ -1,174 +1,252 @@
 // src/components/Services.jsx
-import { Building, Users, Home, Sparkles, Trash2, Droplets, Shield, Clock, Award } from "lucide-react";
+import React from "react";
 import { Link } from "react-router-dom";
-import React from 'react';
+import { Shield, Clock, Award, Droplets } from "lucide-react";
+import commercialImage from "../assets/images/commercialcleaning.jpg";
+import medical from "../assets/images/medical.jpg";
+import shoppingImage from "../assets/images/shopping.jpg"
+import childcareImage from "../assets/images/childcarecleaning.jpeg";
+import officeImage from "../assets/images/office.jpg";
+import builder from '../assets/images/builder.jpg'
 
 const Services = () => {
   const services = [
-    // The URLs are now corrected for the new dynamic routing setup
-    {
-      id: 1,
-      icon: <Building className="text-[#4D757B]" size={48} />,
-      title: "Office Cleaning",
-      shortDescription: "Professional office cleaning services that take the hassle off you and into the hands of our experienced cleaning staff.",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/office-cleaning",
-    },
-    {
-      id: 2,
-      icon: <Users className="text-[#4D757B]" size={48} />,
-      title: "School Cleaning",
-      shortDescription: "Comprehensive school cleaning services ensuring educational institutions maintain a clean and hygienic environment for learning.",
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/school-cleaning",
-    },
-    {
-      id: 3,
-      icon: <Home className="text-[#4D757B]" size={48} />,
-      title: "Childcare Cleaning",
-      shortDescription: "Specialized childcare cleaning services ensuring health, safety, and well-being of children in childcare centers.",
-      image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/childcare-cleaning",
-    },
-    {
-      id: 4,
-      icon: <Sparkles className="text-[#4D757B]" size={48} />,
-      title: "Fitness Centres",
-      shortDescription: "Premium gym cleaning services ensuring your fitness center is up to the highest quality health standards.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/fitness-centres",
-    },
-    {
-      id: 5,
-      icon: <Trash2 className="text-[#4D757B]" size={48} />,
-      title: "Builders Clean",
-      shortDescription: "Expert post-construction cleaning services to remove debris, dust, and grime, making your site spotless and ready.",
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/builders-clean",
-    },
-    {
-      id: 8,
-      icon: <Home className="text-[#4D757B]" size={48} />,
-      title: "Carpet Cleaning",
-      shortDescription: "Professional carpet cleaning services using advanced techniques to deep clean and restore your carpets.",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      url: "/services/carpet-cleaning",
-    },
-  ];
+  {
+    id: 6,
+    title: "Commercial Cleaning",
+    shortDescription:
+      "Comprehensive cleaning solutions for offices, shops, and commercial spaces, ensuring a spotless and professional environment every day",
+    image: commercialImage,
+    url: "/services/commercial-cleaning",
+  },
+  {
+    id: 8,
+    title: "Shopping Center Cleaning",
+    shortDescription:
+      "Comprehensive mall and retail cleaning that keeps high-traffic spaces spotless, safe, welcoming, and creates a positive shopping experience for all visitors",
+    image: shoppingImage,
+    url: "/services/shopping-center-cleaning",
+  },
+  {
+    id: 7,
+    title: "Medical Cleaning",
+    shortDescription:
+      "Specialized cleaning for clinics and healthcare facilities, ensuring hygiene, safety, compliance, and a healthier environment for patients and staff",
+    image: medical,
+    url: "/services/medical-cleaning",
+  },
+
+  {
+    id: 1,
+    title: "Office Cleaning",
+    shortDescription:
+      "Professional office cleaning services that take the hassle off you and into the hands of our experienced cleaning staff",
+    image: officeImage,
+    url: "/services/office-cleaning",
+  },
+  {
+    id: 2,
+    title: "School Cleaning",
+    shortDescription:
+      "Comprehensive school cleaning services ensuring educational institutions maintain a clean and hygienic environment for learning",
+    image:
+      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    url: "/services/school-cleaning",
+  },
+  {
+    id: 3,
+    title: "Childcare Cleaning",
+    shortDescription:
+      "Specialized childcare cleaning services ensuring health, safety, and well-being of children in childcare centers",
+    image: childcareImage,
+    url: "/services/childcare-cleaning",
+  },
+  {
+    id: 4,
+    title: "Fitness Centres",
+    shortDescription:
+      "Premium gym cleaning services ensuring your fitness center is up to the highest quality health standards",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    url: "/services/fitness-centres",
+  },
+  {
+    id: 5,
+    title: "Builders Clean",
+    shortDescription:
+      "Expert post-construction cleaning services to remove debris, dust, and grime, making your site spotless and ready",
+    image:
+      builder,
+    url: "/services/builders-clean",
+  },
+];
+
+
+const ServiceCard = ({ svc }) => (
+  <Link
+    to={svc.url}
+    aria-label={`View ${svc.title} service`}
+    className="
+      group relative block h-full rounded-2xl p-[1px]
+      bg-slate-200 transition-all duration-500
+      hover:bg-gradient-to-br hover:from-[#2563EB]/70 hover:to-[#06B6D4]/70
+      focus:outline-none focus:ring-2 focus:ring-[#2563EB]
+    "
+  >
+    {/* Inner card */}
+    <div
+      className="
+        rounded-[inherit] bg-white h-full overflow-hidden
+        shadow-sm transition-all duration-500
+        group-hover:shadow-2xl group-hover:-translate-y-1
+      "
+    >
+      {/* Media */}
+      <div className="relative h-48 w-full overflow-hidden">
+        <img
+          src={svc.image || '/placeholder.svg'}
+          alt={svc.title}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        {/* Darken image slightly on hover */}
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
+
+        {/* One-time sheen sweep */}
+        <div
+          className="
+            pointer-events-none absolute inset-y-0 -left-1/3 w-1/3
+            bg-gradient-to-r from-white/0 via-white/50 to-white/0
+            skew-x-[-20deg]
+            translate-x-[-120%] group-hover:translate-x-[280%]
+            transition-transform duration-700
+          "
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative p-6">
+        <h3 className="text-lg font-extrabold text-[#0f172a]">
+          <span className="relative inline-block">
+            {svc.title}
+            {/* Animated underline */}
+            <span
+              className="
+                absolute -bottom-1 left-0 h-0.5 w-0 bg-[#2563EB]
+                transition-all duration-500 group-hover:w-12
+              "
+            />
+          </span>
+        </h3>
+
+        <p className="mt-2 text-sm leading-relaxed text-[#475569]">
+          {svc.shortDescription}
+        </p>
+
+        {/* CTA text */}
+        <div
+          className="
+            mt-4 inline-flex items-center gap-2 font-semibold text-[#1d4ed8]
+            transition-all duration-500
+            group-hover:translate-x-1
+          "
+        >
+          Learn More
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        {/* Floating arrow button (slides in) */}
+        <div
+          className="
+            absolute right-4 bottom-6 h-9 w-9 rounded-full
+            border border-slate-200 bg-white shadow-sm
+            flex items-center justify-center
+            opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0
+            transition-all duration-500
+          "
+        >
+          <svg
+            className="h-5 w-5 text-[#2563EB] transition-transform duration-500 group-hover:translate-x-0.5"
+            fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </Link>
+);
+
 
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-800 mb-6">Our Professional Cleaning Services</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12">
-            We offer comprehensive cleaning solutions tailored to your specific needs, using eco-friendly products and professional techniques.
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">
+            Our Professional Cleaning Services
+          </h2>
+          <p className="mt-4 text-lg text-secondary max-w-4xl mx-auto">
+            We offer comprehensive cleaning solutions tailored to your specific needs, using
+            eco-friendly products and professional techniques.
           </p>
         </div>
 
-        {/* --- RESTORED VISUAL CONTENT --- */}
-        <div className="space-y-8">
-          {/* First Row */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.slice(0, 3).map((service) => (
-              <div key={service.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-[#A2B5C3]/20 group cursor-pointer">
-                <div className="relative overflow-hidden h-48">
-                  <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 p-3 bg-white/90 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.shortDescription}</p>
-                  <Link to={service.url} className="block w-full bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second Row */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.slice(3, 6).map((service) => (
-              <div key={service.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-[#A2B5C3]/20 group cursor-pointer">
-                <div className="relative overflow-hidden h-48">
-                  <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 p-3 bg-white/90 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.shortDescription}</p>
-                  <Link to={service.url} className="block w-full bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Third Row */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {services.slice(6, 8).map((service) => (
-              <div key={service.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-[#A2B5C3]/20 group cursor-pointer">
-                <div className="relative overflow-hidden h-48">
-                  <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 p-3 bg-white/90 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.shortDescription}</p>
-                  <Link to={service.url} className="block w-full bg-gradient-to-r from-[#4D757B] to-[#A2B5C3] text-white py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Services Grid (2 rows × 4 cards) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((svc) => (
+            <ServiceCard key={svc.id} svc={svc} />
+          ))}
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="text-center mt-20 mb-16">
-          <h3 className="text-4xl font-bold text-gray-800 mb-8">Why Choose Our Cleaning Services?</h3>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            We customize our services to fit each business's unique needs. We promise to bring affordable, top-quality cleaning that makes your workspace safe and productive.
+        {/* Why Choose Us */}
+        <div className="text-center mt-20">
+          <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8">
+            Why Choose Our Cleaning Services?
+          </h3>
+          <p className="text-lg text-secondary mb-12 max-w-3xl mx-auto">
+            We customize our services to fit each business's unique needs. We promise to bring
+            affordable, top-quality cleaning that makes your workspace safe and productive.
           </p>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-[#4D757B] to-[#A2B5C3] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-brand-gradient p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Shield className="text-white" size={24} />
               </div>
-              <h4 className="font-bold text-gray-800 mb-2">Fully Licensed & Insured</h4>
-              <p className="text-sm text-gray-600">Licensed, insured & bonded for complete protection</p>
+              <h4 className="font-bold text-primary mb-2">Fully Licensed & Insured</h4>
+              <p className="text-sm text-secondary">
+                Licensed, insured & bonded for complete protection
+              </p>
             </div>
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-[#4D757B] to-[#A2B5C3] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-brand-gradient p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Clock className="text-white" size={24} />
               </div>
-              <h4 className="font-bold text-gray-800 mb-2">Flexible Scheduling</h4>
-              <p className="text-sm text-gray-600">Available 24/7 to fit your business schedule</p>
+              <h4 className="font-bold text-primary mb-2">Flexible Scheduling</h4>
+              <p className="text-sm text-secondary">
+                Available 24/7 to fit your business schedule
+              </p>
             </div>
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-[#4D757B] to-[#A2B5C3] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-brand-gradient p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Award className="text-white" size={24} />
               </div>
-              <h4 className="font-bold text-gray-800 mb-2">100% Satisfaction Guarantee</h4>
-              <p className="text-sm text-gray-600">We promise to meet and exceed your expectations</p>
+              <h4 className="font-bold text-primary mb-2">100% Satisfaction Guarantee</h4>
+              <p className="text-sm text-secondary">
+                We promise to meet and exceed your expectations
+              </p>
             </div>
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-[#4D757B] to-[#A2B5C3] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-brand-gradient p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Droplets className="text-white" size={24} />
               </div>
-              <h4 className="font-bold text-gray-800 mb-2">Eco-Friendly Products</h4>
-              <p className="text-sm text-gray-600">Green cleaning products for safe environments</p>
+              <h4 className="font-bold text-primary mb-2">Eco-Friendly Products</h4>
+              <p className="text-sm text-secondary">
+                Green cleaning products for safe environments
+              </p>
             </div>
           </div>
         </div>

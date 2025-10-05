@@ -16,3 +16,30 @@
     rgba(0, 0, 0, 0.00) 100%
   );
 }
+
+
+/* === Brand Palette (Blue Theme) === */
+:root{
+  --primary-blue: #1E3A8A;   /* Header / Brand */
+  --secondary-blue: #2563EB; /* Highlights / icons */
+  --accent-blue: #3B82F6;    /* Buttons / CTAs */
+  --bg-soft: #F0F9FF;        /* Site background */
+  --text-primary: #0F172A;   /* Headings / body */
+  --text-secondary: #475569; /* Subtitles */
+}
+
+body{
+  background: var(--bg-soft);
+  color: var(--text-primary);
+}
+
+/* Utilities (for places not using Tailwind colors directly) */
+.bg-brand { background-color: var(--primary-blue); }
+.bg-brand-gradient { background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.btn-accent { background: var(--accent-blue); color: #fff; }
+.btn-accent:hover { filter: brightness(0.95); }
+.border-soft { border-color: rgba(15, 23, 42, 0.05); }
+.shadow-soft { box-shadow: 0 10px 20px rgba(30, 58, 138, .12); }
+

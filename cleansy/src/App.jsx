@@ -25,10 +25,17 @@ export default function App() {
       <Footer />
 
       <FloatingPhone
-  tel="+1 (555) 987-6543"
+  tel="+61 432 300 733"
   label="Talk to True Shine"
-  color="#16a34a"  
+  color="#16a34a"
   accent="rgba(22,163,74,.35)"
+  chat={{
+    whatsapp: { text: "Hi True Shine! I’d like to book a clean." },
+    sms: { body: "Hello True Shine, can we chat about a quote?" },
+    link: "/contact",                 // or an external chat URL if you use Intercom/LiveChat
+    email: "hello@trueshine.au",      // optional fallback
+    label: "Chat with us",            // optional
+  }}
 />
 
     </Router>

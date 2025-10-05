@@ -13,7 +13,7 @@ export default function HashScroll() {
         const el = document.querySelector(hash)
         if (el) {
           // Calculate offset for fixed header (approximately 120px)
-          const headerOffset = 120
+          const headerOffset = 50
           const elementPosition = el.getBoundingClientRect().top
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 

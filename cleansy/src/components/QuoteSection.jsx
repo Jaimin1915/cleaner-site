@@ -68,20 +68,20 @@ export default function QuoteSection() {
   };
 
   return (
-    <section id="quote" className="relative bg-white">
-      <div className="pointer-events-none absolute inset-x-0 -top-10 h-24 bg-gradient-to-b from-transparent to-slate-50" />
+    <section id="quote" className="relative bg-[var(--bg-soft)]">
+      <div className="pointer-events-none absolute inset-x-0 -top-10 h-24 bg-gradient-to-b from-transparent to-[#F0F9FF]" />
 
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary">
             Request a Free Quote
           </h2>
-          <p className="mt-3 text-slate-600">
+          <p className="mt-3 text-secondary">
             Tell us a few details about your space and we’ll tailor a quote for you.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-4xl rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-slate-200">
+        <div className="mx-auto mt-10 max-w-4xl rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-blue-200">
           <form onSubmit={handleSubmit} className="grid gap-5">
             {/* Honeypot (hidden) */}
             <input
@@ -96,26 +96,26 @@ export default function QuoteSection() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="grid">
-                <label className="text-sm font-medium text-slate-700">Your Name *</label>
+                <label className="text-sm font-medium text-primary">Your Name *</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g. Alex Johnson"
-                  className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="mt-1 w-full rounded-lg border border-blue-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                   required
                 />
               </div>
               <div className="grid">
-                <label className="text-sm font-medium text-slate-700">Your Email *</label>
+                <label className="text-sm font-medium text-primary">Your Email *</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="mt-1 w-full rounded-lg border border-blue-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                   required
                 />
               </div>
@@ -123,23 +123,23 @@ export default function QuoteSection() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="grid">
-                <label className="text-sm font-medium text-slate-700">Your Phone</label>
+                <label className="text-sm font-medium text-primary">Your Phone</label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Optional"
-                  className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="mt-1 w-full rounded-lg border border-blue-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                 />
               </div>
               <div className="grid">
-                <label className="text-sm font-medium text-slate-700">Select Service *</label>
+                <label className="text-sm font-medium text-primary">Select Service *</label>
                 <select
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="mt-1 w-full rounded-lg border border-blue-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                   required
                 >
                   <option value="">Choose one</option>
@@ -154,7 +154,7 @@ export default function QuoteSection() {
             </div>
 
             <div className="grid">
-              <label className="text-sm font-medium text-slate-700">
+              <label className="text-sm font-medium text-primary">
                 Tell us about your cleaning needs… *
               </label>
               <textarea
@@ -163,7 +163,7 @@ export default function QuoteSection() {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Size, frequency, areas to focus on, access times, etc."
-                className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="mt-1 w-full rounded-lg border border-blue-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                 required
               />
             </div>
@@ -171,7 +171,7 @@ export default function QuoteSection() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-3 font-semibold text-white shadow-lg hover:opacity-95 disabled:opacity-60"
+              className="mt-2 inline-flex items-center justify-center rounded-xl btn-accent px-6 py-3 font-semibold text-white shadow-lg hover:opacity-95 disabled:opacity-60"
             >
               {loading ? (
                 <>
@@ -182,15 +182,15 @@ export default function QuoteSection() {
               )}
             </button>
 
-            <div className="mt-1 flex items-center text-xs text-slate-500">
-              <ShieldCheck size={14} className="mr-1 text-emerald-600" />
+            <div className="mt-1 flex items-center text-xs text-secondary">
+              <ShieldCheck size={14} className="mr-1 text-[#2563EB]" />
               We respect your privacy and don’t share your details.
             </div>
 
             {status.msg && (
               <p
                 className={`text-sm ${
-                  status.type === "success" ? "text-emerald-600" : "text-red-600"
+                  status.type === "success" ? "text-[#2563EB]" : "text-red-600"
                 }`}
                 role="status"
                 aria-live="polite"

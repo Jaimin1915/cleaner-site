@@ -13,7 +13,7 @@ export default function FloatingPhone({
     whatsapp: { text: "Hi! I’d like to know more about your services." },
     sms: { body: "Hello! I’m interested in booking a clean." },
     link: "/contact",
-    email: "info@trueshine.com",
+    email: "tscleaningfacility@gmail.com",
     label: "Chat with us",
   },
 }) {

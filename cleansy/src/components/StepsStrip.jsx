@@ -94,7 +94,7 @@ export default function StepsStrip() {
         <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           {/* Call Now */}
           <a
-            href="tel:" // replace with your real number
+            href="tel:+61 432 300 733" // replace with your real number
             className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-8 py-3 text-white text-lg font-semibold shadow-md 
                        transition-all duration-300 hover:bg-sky-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
           >

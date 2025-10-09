@@ -143,7 +143,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="mr-3 text-[#93C5FD]" size={18} />
-                <span>info@trueshine.com</span>
+                <span>tscleaningfacility@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-3 text-[#93C5FD]" size={18} />
@@ -158,10 +158,6 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h4 className="text-xl font-semibold mb-4 text-[#93C5FD]">Visit Our Location</h4>
-              <p className="text-white/80 mb-4">
-                Come visit us at our main office or contact us to schedule a consultation at your
-                location.
-              </p>
               <div className="flex items-center text-white/80">
                 <MapPin className="mr-3 text-[#93C5FD]" size={18} />
                 <span>Herses Rd, Eagleby QLD 4207, Australia</span>

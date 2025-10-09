@@ -53,8 +53,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-primary">Email</p>
-                  <a href="mailto:info@trueshine.com" className="text-secondary hover:text-primary">
-                    info@trueshine.com
+                  <a href="mailto:tscleaningfacility@gmail.com" className="text-secondary hover:text-primary">
+                    tscleaningfacility@gmail.com
                   </a>
                 </div>
               </div>
